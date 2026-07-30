@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: probed
+source: live HTTP probes of https://lifesum.com/.well-known/*
+host: https://lifesum.com
+# IMPORTANT (re-run caveat): lifesum.com is a single-page app whose origin serves an
+# HTTP 200 HTML shell for EVERY unmatched path. A naive status-code probe records
+# false 200s for all of these paths. Each document below was verified by content:
+# the response body was the 3,303-byte React shell (text/html), not the requested
+# document. A security.txt or JSON discovery document would never be served as HTML.
+# Treat these as absent (soft-404), not present.
+soft_404_signature:
+  content_type: text/html
+  bytes: 3303
+  note: identical body returned for a known-nonsense control path
+documents:
+- path: /.well-known/security.txt
+  status: 200
+  present: false
+  reason: soft-404, returned HTML shell not RFC 9116 text
+- path: /.well-known/openid-configuration
+  status: 200
+  present: false
+  reason: soft-404, returned HTML shell not JSON
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  present: false
+  reason: soft-404, returned HTML shell not JSON
+- path: /.well-known/api-catalog
+  status: 200
+  present: false
+  reason: soft-404, returned HTML shell not JSON
+- path: /.well-known/ai-plugin.json
+  status: 200
+  present: false
+  reason: soft-404, returned HTML shell not JSON
+- path: /llms.txt
+  status: 200
+  present: false
+  reason: soft-404, returned HTML shell not llms.txt text
+summary:
+  documents_found: 0
+  note: Lifesum publishes no /.well-known/ discovery surface as of this probe.

@@ -1,0 +1,36 @@
+generated: '2026-07-19'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=lifesum
+# Registries probed: npm (3 hits, 2 first-party), PyPI (404), pkg.go.dev, RubyGems,
+# Packagist, crates.io, Maven Central, NuGet — no first-party API client library found.
+#
+# IMPORTANT: the two @lifesum-scoped packages below are first-party (published under
+# the org's own npm scope) but they are INTERNAL FRONTEND BUILD TOOLING — shared
+# ESLint/Prettier configs for their web admin app. They are NOT API client SDKs and
+# do NOT constitute a developer SDK surface. No `SDKs` pointer is wired in apis.yml
+# on the strength of these; doing so would misrepresent the provider.
+packages:
+- language: javascript
+  registry: npm
+  name: "@lifesum/eslint-config-web-admin"
+  url: https://www.npmjs.com/package/@lifesum/eslint-config-web-admin
+  install: npm install @lifesum/eslint-config-web-admin
+  official: true
+  api_client: false
+  kind: internal-build-tooling
+- language: javascript
+  registry: npm
+  name: "@lifesum/prettier-config-web-admin"
+  url: https://www.npmjs.com/package/@lifesum/prettier-config-web-admin
+  install: npm install @lifesum/prettier-config-web-admin
+  official: true
+  api_client: false
+  kind: internal-build-tooling
+summary:
+  api_client_libraries: 0
+  first_party_packages: 2
+  note: >-
+    No first-party Lifesum API client SDK exists in any public registry. The
+    github.com/lifesum repos named *-onboarding-sdk are FORKS of the third-party
+    vendor onboarding-online/swift-onboarding-sdk (verified via the upstream CI
+    badge in the fork's README), not Lifesum API SDKs.
