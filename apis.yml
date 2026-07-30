@@ -1,19 +1,44 @@
 aid: lifesum
-name: lifesum
-description: lifesum is a company surfaced as a portfolio company of balderton-capital and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+name: Lifesum
+description: Lifesum is a Stockholm-based digital health company whose consumer mobile
+  application helps people improve their well-being through food logging, calorie and
+  macronutrient tracking, personalized meal plans, recipes, and habit building. Backed
+  by Balderton Capital, the company operates a subscription business-to-consumer product
+  across iOS and Android in a dozen languages. As of this profile Lifesum publishes no
+  public developer program, API documentation, or partner API portal, so this entry is
+  an identity-only company record in the API Evangelist network rather than an API
+  profile.
 url: https://raw.githubusercontent.com/api-evangelist/lifesum/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://lifesum.com/public/apple-touch-icon.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - balderton-capital
 x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier-reason: no-public-api
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Health
+- Nutrition
+- Fitness
+- Wellness
+- Mobile Apps
+- Consumer
+- Food Tracking
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +48,33 @@ maintainers:
 common:
 - type: Website
   url: https://lifesum.com/
+- type: Support
+  url: https://help.lifesum.com/en/
+- type: Blog
+  url: https://lifesum.com/nutrition-explained/
+- type: GitHubOrganization
+  url: https://github.com/lifesum
+- type: PrivacyPolicy
+  url: https://lifesum.com/policy
+- type: TermsOfService
+  url: https://lifesum.com/policy
+- type: Press
+  url: https://lifesum.com/press/
+- type: Contact
+  url: https://lifesum.com/contact/
+- type: Careers
+  url: https://jobs.lifesum.com/
+- type: DomainSecurity
+  url: security/lifesum-domain-security.yml
+- type: Packages
+  url: packages/lifesum-packages.yml
+# No `WellKnown` pointer: the well-known/ artifact records a verified-negative probe
+# (0 documents found). Wiring the pointer would claim a discovery surface that does
+# not exist. The artifact is retained so re-runs do not re-probe from scratch.
+- type: LLMsTxt
+  url: llms/lifesum-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
